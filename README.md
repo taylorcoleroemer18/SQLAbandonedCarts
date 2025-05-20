@@ -42,7 +42,7 @@ This project explores how users interact with products in an e-commerce setting 
 
 ## 📷 Sample Output
 
-![image](https://github.com/user-attachments/assets/360e640f-7155-4bc1-b58d-eede48058445)
+![image](https://github.com/user-attachments/assets/ebe3c086-9a28-4589-8bb2-7d6977f554bb)
 
 ---
 
