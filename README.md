@@ -1,66 +1,152 @@
-# 🛒 SQL E-Commerce Funnel Analysis Project
+# 🛒 SQL E-Commerce Funnel & Revenue Analysis
 
-This project explores how users interact with products in an e-commerce setting by tracking their behavior across four key funnel stages:
+This project simulates and analyzes user behavior across a four-step e-commerce funnel to identify conversion bottlenecks and quantify revenue optimization opportunities.
 
-1. `product_view`
-2. `add_to_cart`
-3. `begin_checkout`
-4. `purchase`
+The analysis evaluates user sessions across the following stages:
 
----
-
-## 📊 Objectives
-
-- Calculate **conversion rates** at each step of the funnel
-- Identify products with the **highest and lowest purchase rates**
-- Join events with product metadata (name, category, price)
-- Deliver actionable insights for marketing or product strategy
+1. `product_view`  
+2. `add_to_cart`  
+3. `begin_checkout`  
+4. `purchase`  
 
 ---
 
-## 🧠 Key SQL Concepts Used
+# 🎯 Business Objective
 
-- Common Table Expressions (CTEs)
-- Aggregate functions (`SUM`, `MAX`, `COUNT`)
-- CASE WHEN logic for event tagging
-- Joins
-- NULL handling and conversion math
-- Clean conversion rate calculations (with rounding and %s)
+The goal of this analysis is to:
 
----
-
-## 🧩 Files in This Repo
-
-| File | Description |
-|------|-------------|
-| `funnel_analysis.sql` | Full query to analyze funnel and sort by conversion |
-| `products_table.sql` | Creates & populates a sample `products` table |
-| `events_table.sql` | Creates and populates a sample `events` table |
-| `README.md` | Project overview, goals, and technical details |
+- Measure step-to-step conversion rates  
+- Identify where users drop off in the funnel  
+- Determine top-performing products by revenue  
+- Quantify potential revenue uplift from conversion improvements  
+- Provide actionable business recommendations  
 
 ---
 
-## 📷 Sample Output
+# 🧠 Executive Summary
 
-![image](https://github.com/user-attachments/assets/ebe3c086-9a28-4589-8bb2-7d6977f554bb)
+This analysis evaluated **137 simulated user sessions** across a four-step e-commerce funnel.
+
+## 📊 Funnel Performance
+
+| Stage | Users | Conversion Rate |
+|-------|-------|----------------|
+| Views | 137 | — |
+| Add to Cart | 82 | 59.85% |
+| Begin Checkout | 41 | 50.00% (from cart) |
+| Purchase | 25 | 60.98% (from checkout) |
+| **Overall View → Purchase** | — | **18.25%** |
+
+### 🔎 Key Insight
+
+The largest drop-off occurs between **Cart → Checkout (50%)**.
+
+This indicates friction before payment begins, making cart abandonment the primary optimization opportunity.
 
 ---
 
-## 🛠 Built With
+# 💰 Revenue Analysis
 
-- Microsoft SQL Server Management Studio (SSMS)
-- T-SQL
-- Sample e-commerce event data
+Top revenue-generating products:
+
+1. **Smartwatch** – $999.95  
+2. **Noise Cancelling Headphones** – $259.98  
+3. **LED Desk Lamp** – $199.95  
+
+High-value electronics drive the majority of revenue.
+
+Improving checkout initiation rates for premium products would significantly increase total revenue.
 
 ---
 
-## 💼 Portfolio Description
+# 📈 Revenue Optimization Scenario
 
-Built a multi-step SQL funnel analysis to identify high/low-performing e-commerce products based on user events. Delivered insights using T-SQL, CTEs, and joins with real-world product metadata.
+A simulated **5% improvement in checkout completion** shows measurable projected revenue growth.
+
+This demonstrates how small conversion gains at critical funnel stages can materially impact revenue.
 
 ---
 
-## 📩 Contact
+# 🧩 Technical Approach
 
-Have questions? Feel free to reach out or fork this repo and remix it!
+The analysis was performed using T-SQL and structured in multiple stages:
 
+### 1️⃣ Data Generation
+- Simulated 137 user sessions  
+- Randomized product interactions  
+- Realistic drop-off behavior between funnel steps  
+
+### 2️⃣ Funnel Modeling
+- Used CTEs to construct user-level funnel progression  
+- Applied `MAX(CASE WHEN ...)` logic to track step completion  
+- Calculated step-to-step and overall conversion rates  
+- Used `NULLIF()` to safely prevent division errors  
+
+### 3️⃣ Product-Level Analysis
+- Aggregated conversion metrics by product  
+- Joined product metadata (category, price)  
+- Calculated revenue per product  
+
+### 4️⃣ Uplift Modeling
+- Estimated projected revenue from a +5% checkout improvement  
+- Modeled incremental revenue impact  
+
+---
+
+# 🛠 SQL Concepts Demonstrated
+
+- Common Table Expressions (CTEs)  
+- Aggregations (`SUM`, `COUNT`)  
+- Conditional logic (`CASE WHEN`)  
+- Step-to-step conversion calculations  
+- Revenue modeling  
+- Join operations  
+- NULL-safe division using `NULLIF`  
+- Structured query design for analytical reporting  
+
+---
+
+# 📷 Sample Output
+
+*(Insert screenshots here)*
+
+- Overall funnel conversion table  
+- Product revenue breakdown  
+- Revenue uplift projection  
+
+---
+
+# 🎯 Strategic Recommendations
+
+Based on the analysis:
+
+- Reduce friction between cart and checkout (guest checkout, fewer required fields)  
+- Implement cart abandonment email/SMS campaigns  
+- A/B test checkout entry flow  
+- Offer limited-time incentives on high-value electronics  
+- Analyze checkout UX for unnecessary steps  
+
+---
+
+# 💼 Portfolio Positioning
+
+This project demonstrates the ability to:
+
+- Translate raw event data into business insights  
+- Diagnose funnel performance issues  
+- Quantify revenue impact from conversion optimization  
+- Communicate findings in an executive-ready format  
+
+---
+
+# 🛠 Built With
+
+- Microsoft SQL Server Management Studio (SSMS)  
+- T-SQL  
+- Simulated e-commerce behavioral data  
+
+---
+
+# 📩 Contact
+
+If you’d like to discuss this analysis or explore collaboration opportunities, feel free to connect.
